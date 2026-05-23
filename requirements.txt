@@ -1,0 +1,22 @@
+# ==========================================
+# 茉晓mox - 咖啡店打工女仆 Bot 依赖清单
+# ==========================================
+# 安装: pip install -r requirements.txt
+
+# NoneBot2 框架
+nonebot2>=2.2.0
+nonebot-adapter-onebot>=2.2.0
+nb-cli>=0.7.0
+
+# 数据库
+aiosqlite>=0.20.0
+
+# 配置与网络
+pyyaml>=6.0
+httpx>=0.24.0
+
+# 图片处理
+Pillow>=10.0.0
+
+# 定时任务
+apscheduler>=3.10.0

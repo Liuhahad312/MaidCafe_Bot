@@ -1,0 +1,61 @@
+# =============================================
+# 茉晓mox - 咖啡店打工女仆 Bot 配置文件
+# =============================================
+# 注意: SUPERUSERS 在 .env 中配置（NoneBot2 框架级）
+
+bot:
+  name: "茉晓mox"
+  description: "咖啡店打工女仆"
+  aliases:
+    - "mox"
+    - "茉晚"
+
+# 至高权限 (Master / 老板)
+# 唯一绑定，拥有全局最高权限
+master:
+  qq_id: "1035585165"
+
+# AI 引擎配置
+api:
+  deepseek:
+    api_key: ""
+    base_url: "https://api.deepseek.com"
+    model: "deepseek-chat"
+    description: "主大脑 - 日常对话/情绪安抚/塔罗解读/长线记忆"
+
+  grok:
+    api_key: ""
+    base_url: "https://api.x.ai"
+    model: "grok-2"
+    description: "外包大脑 - 图片识别/联网搜索/复杂任务"
+
+# Token 定价 (USD / 1M tokens) — 用于消耗估算
+pricing:
+  deepseek:
+    input:  0.14
+    output: 0.28
+  grok:
+    input:  2.0
+    output: 10.0
+  default:
+    input:  1.0
+    output: 2.0
+
+# 预算与限额
+limits:
+  daily_token_budget_usd: 2.0      # 每日 API 预算上限(美元)
+  tarot_daily_chances: 1            # 每人每天可占卜次数
+  gag_threshold_monthly: 7          # 月禁言次数达到此值触发踢出
+
+# 行为控制
+misc:
+  # 手癌概率: 正式环境 0.0015 (0.15%), 本地测试 0.3 (30%)
+  typo_rate: 0.3
+  image_buffer_timeout: 4           # 图文缓冲时间(秒)
+  rest_hours_start: 0               # 休息时段开始 (凌晨0点)
+  rest_hours_end: 5                 # 休息时段结束 (凌晨5点)
+  briefing_time: "22:00"            # 每日简报发送时间
+
+# 数据库
+database:
+  path: "data/mox.db"
